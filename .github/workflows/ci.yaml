@@ -11,10 +11,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Flutter
-        uses: subosito/flutter-action@v8
+        uses: subosito/flutter-action@v2
+        with:
+        flutter-version: '3.7.7'
+        channel: 'stable'
+      - run: flutter --version
 
       - name: Install dependencies
         run: flutter pub get
@@ -39,7 +43,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: build artifactss
+          name: build artifacts
           path: |
             build/app/outputs/flutter-apk/app-release.apk
             build/ios/iphoneos/Runner.app
