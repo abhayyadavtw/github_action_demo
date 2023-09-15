@@ -22,22 +22,22 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-        #      - name: Analyse code
-        #        run: flutter test --coverage
-
       - name: lint
         run: flutter analyze lib
+
+      - name: test with coverage
+        run: flutter test --coverage
 
       - name: Build Android apk
         run: flutter build apk
 
-      - name: Build ios IPA
-        run: flutter build ios
+      #      - name: Build ios IPA
+      #        run: flutter build ios
 
-        #      - name: Upload code coverage report
-        #        uses: codecov/codecov-action@v2
-        #        with:
-        #          token: ${{ secrets.CODECOV_TOKE }}
+      #      - name: Upload code coverage report
+      #        uses: codecov/codecov-action@v2
+      #        with:
+      #          token: ${{ secrets.CODECOV_TOKE }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
@@ -45,4 +45,4 @@ jobs:
           name: build artifacts
           path: |
             build/app/outputs/flutter-apk/app-release.apk
-            build/ios/iphoneos/Runner.app
+#            build/ios/iphoneos/Runner.app
