@@ -27,7 +27,7 @@ jobs:
         run: flutter analyze lib
 
       - name: test with coverage
-        run: flutter test --coverage
+        run: flutter test --coverage --concurrency=${CPU_COUNT*0.8}
 
       - name: Build Android apk
         run: flutter build apk --release
