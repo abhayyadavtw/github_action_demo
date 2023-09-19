@@ -10,7 +10,7 @@ jobs:
 
   ios-build:
     runs-on: macos-latest
-    needs: build
+    needs: common
 
     steps:
       - name: Checkout code
