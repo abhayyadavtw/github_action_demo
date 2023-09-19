@@ -9,7 +9,6 @@ on:
 jobs:
 
   ios-build:
-    needs: common
     runs-on: macos-latest
 
     steps:

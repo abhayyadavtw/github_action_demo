@@ -9,7 +9,6 @@ on:
 jobs:
 
   android_build:
-    needs: common
     runs-on: ubuntu-latest
 
     steps:
