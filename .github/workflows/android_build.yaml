@@ -2,7 +2,7 @@ name: Android build
 
 on:
   workflow_run:
-    workflows: [ "common" ]
+    workflows: [ "Common lint & Unit test" ]
     types:
       - completed
 
@@ -10,7 +10,6 @@ jobs:
 
   android_build:
     runs-on: ubuntu-latest
-    needs: common
 
     steps:
       - name: Checkout code

@@ -2,7 +2,7 @@ name: IOS build
 
 on:
   workflow_run:
-    workflows: [ "common" ]
+    workflows: [ "Common lint & Unit test" ]
     types:
       - completed
 
@@ -10,7 +10,6 @@ jobs:
 
   ios-build:
     runs-on: macos-latest
-    needs: common
 
     steps:
       - name: Checkout code
